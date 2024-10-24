@@ -15,7 +15,7 @@ const convertPresetImageToLedState = (preset) => {
     return result;
 };
 
-(function () {
+(function() {
     Entry.Microbit2BleLite = new (class Microbit2LiteBle {
         constructor() {
             this.webapiType = 'ble';
@@ -1100,12 +1100,11 @@ const convertPresetImageToLedState = (preset) => {
             };
         }
 
-        getBlocks = function () {
+        getBlocks = function() {
             return {
                 microbit2blelite_common_title: {
                     skeleton: 'basic_text',
                     color: EntryStatic.colorSet.common.TRANSPARENT,
-                    template: '%1',
                     fontColor: '#333333',
                     params: [
                         {
@@ -1118,7 +1117,7 @@ const convertPresetImageToLedState = (preset) => {
                     def: {
                         type: 'microbit2blelite_common_title',
                     },
-                    class: 'microbit2bleliteLed',
+                    class: 'microbit2blelite_title',
                     isNotFor: ['Microbit2BleLite'],
                     events: {},
                 },
@@ -2054,8 +2053,7 @@ const convertPresetImageToLedState = (preset) => {
                     func: async (sprite, script) => {
                         const axis = script.getField('AXIS');
                         // eslint-disable-next-line max-len
-                        const deviceAccData =
-                            await this.services.AccelerometerService.readAccelerometerData();
+                        const deviceAccData = await this.services.AccelerometerService.readAccelerometerData();
                         if (axis === 'mag') {
                             return deviceAccData.x + deviceAccData.y + deviceAccData.z;
                         } else {
@@ -2166,8 +2164,7 @@ const convertPresetImageToLedState = (preset) => {
                     func: async (sprite, script) => {
                         const axis = script.getField('AXIS');
                         // eslint-disable-next-line max-len
-                        const deviceMagnetData =
-                            await this.services.MagnetometerService.readMagnetometerData();
+                        const deviceMagnetData = await this.services.MagnetometerService.readMagnetometerData();
                         if (axis === 'mag') {
                             return deviceMagnetData.x + deviceMagnetData.y + deviceMagnetData.z;
                         } else {
@@ -2212,8 +2209,7 @@ const convertPresetImageToLedState = (preset) => {
                     paramsKeyMap: {},
                     func: async (sprite, script) => {
                         // eslint-disable-next-line max-len
-                        const temperature =
-                            await this.services.TemperatureService.readTemperature();
+                        const temperature = await this.services.TemperatureService.readTemperature();
                         return temperature;
                     },
                 },
@@ -2334,7 +2330,6 @@ const convertPresetImageToLedState = (preset) => {
                     skeleton: 'basic_text',
                     color: EntryStatic.colorSet.common.TRANSPARENT,
                     fontColor: '#333333',
-                    template: '%1',
                     params: [
                         {
                             type: 'Text',
@@ -2346,7 +2341,7 @@ const convertPresetImageToLedState = (preset) => {
                     def: {
                         type: 'microbit2blelite_v2_title',
                     },
-                    class: 'microbit2blelitev2',
+                    class: 'microbit2blelite_title',
                     isNotFor: ['Microbit2BleLite'],
                     events: {},
                 },

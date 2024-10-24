@@ -4,7 +4,7 @@ const _throttle = require('lodash/throttle');
 
 const EVENT_INTERVAL = 150;
 
-(function () {
+(function() {
     Entry.Microbit2lite = new (class Microbit2Lite {
         constructor() {
             this.commandStatus = {};
@@ -1018,13 +1018,12 @@ const EVENT_INTERVAL = 150;
             };
         }
 
-        getBlocks = function () {
+        getBlocks = function() {
             return {
                 microbit2lite_common_title: {
                     skeleton: 'basic_text',
                     color: EntryStatic.colorSet.common.TRANSPARENT,
                     fontColor: '#333333',
-                    template: '%1',
                     params: [
                         {
                             type: 'Text',
@@ -1036,7 +1035,7 @@ const EVENT_INTERVAL = 150;
                     def: {
                         type: 'microbit2lite_common_title',
                     },
-                    class: 'microbit2litePin',
+                    class: 'microbit2lite_title',
                     isNotFor: ['Microbit2lite'],
                     events: {},
                 },
@@ -2282,7 +2281,6 @@ const EVENT_INTERVAL = 150;
                     skeleton: 'basic_text',
                     color: EntryStatic.colorSet.common.TRANSPARENT,
                     fontColor: '#333333',
-                    template: '%1',
                     params: [
                         {
                             type: 'Text',
@@ -2294,7 +2292,7 @@ const EVENT_INTERVAL = 150;
                     def: {
                         type: 'microbit2lite_v2_title',
                     },
-                    class: 'microbit2litev2',
+                    class: 'microbit2lite_title',
                     isNotFor: ['Microbit2lite'],
                     events: {},
                 },
